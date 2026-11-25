@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/* ขยายขนาดตัวอักษรทั้งเว็บ (ฟอนต์ Kanit อ่านเล็กกว่าที่ตัวเลขบอก)
+   ปรับเฉพาะตัวอักษร ไม่ขยาย spacing; ค่าเดิมของ Tailwind: xs 12 / sm 14 / base 16 / lg 18 / xl 20 / 2xl 24 px */
+@theme {
+  --text-xs: 0.875rem;          /* 14px */
+  --text-xs--line-height: 1.45;
+  --text-sm: 1rem;              /* 16px */
+  --text-sm--line-height: 1.5;
+  --text-base: 1.125rem;        /* 18px */
+  --text-base--line-height: 1.55;
+  --text-lg: 1.25rem;           /* 20px */
+  --text-lg--line-height: 1.5;
+  --text-xl: 1.375rem;          /* 22px */
+  --text-xl--line-height: 1.4;
+  --text-2xl: 1.625rem;         /* 26px */
+  --text-2xl--line-height: 1.35;
+}
+
+body {
+  margin: 0;
+  font-family: 'Kanit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  color: #1e293b;
+  background-color: #f8fafc;
+  overflow-x: hidden;
+}
+
+.custom-scrollbar::-webkit-scrollbar { 
+  width: 6px; 
+  height: 6px;
+} 
+.custom-scrollbar::-webkit-scrollbar-track { 
+  background: transparent; 
+} 
+.custom-scrollbar::-webkit-scrollbar-thumb { 
+  background-color: #cbd5e1; 
+  border-radius: 20px; 
+} 
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { 
+  background-color: #94a3b8; 
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float-slow 4s ease-in-out infinite;
+}

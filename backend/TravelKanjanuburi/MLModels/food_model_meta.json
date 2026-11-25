@@ -1,0 +1,16 @@
+{
+  "ModelName": "Food Popularity Model",
+  "Algorithm": "LightGBM Regression",
+  "R2": 0.8725591352424207,
+  "RMSE": 0.45488885956356157,
+  "MAE": 0.33162792641669514,
+  "TrainedAtUtc": "2026-11-20T00:25:26.7532532Z",
+  "DurationSeconds": 3.89,
+  "TotalRows": 1600,
+  "TrainRows": 1080,
+  "TestRows": 320,
+  "Windows": 40,
+  "Split": "chronological 80/20 \u002B embargo",
+  "BaselineMeanRmse": 1.2761741848400068,
+  "BaselineLogActivityRmse": 0.5805300530567598
+}

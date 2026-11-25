@@ -1,0 +1,42 @@
+# Dependencies
+/node_modules
+
+# Build artifacts
+/build
+/dist
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+
+# Specific to the subfolders
+backend/node_modules
+frontend/node_modules
+
+# Environment variables (Crucial for security)
+.env
+.env.local
+.env.development
+.env.production
+# --- Sensitive / generated files (do not commit) ---
+.env
+.env.*
+!.env.example
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+*.pem
+*.pfx
+*.key
+*.bak
+# User uploads (avatars and photos), local backups and training data
+**/wwwroot/uploads/
+_backup_*/
+backend/TravelKanjanuburi/MLModels/training_dataset_*.csv
+# Frontend build copied into the API
+backend/TravelKanjanuburi/wwwroot/assets/
+backend/TravelKanjanuburi/wwwroot/index.html

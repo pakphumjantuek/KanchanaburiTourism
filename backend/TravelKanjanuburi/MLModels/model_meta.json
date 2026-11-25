@@ -1,0 +1,88 @@
+{
+  "ModelName": "LightGBM Category Scorer",
+  "ModelVersion": "2.0.0",
+  "Algorithm": "LightGBM",
+  "ProblemType": "Regression (\u0E43\u0E0A\u0E49\u0E04\u0E30\u0E41\u0E19\u0E19\u0E08\u0E31\u0E14\u0E2D\u0E31\u0E19\u0E14\u0E31\u0E1A\u0E2B\u0E21\u0E27\u0E14\u0E15\u0E48\u0E2D\u0E1C\u0E39\u0E49\u0E43\u0E0A\u0E49)",
+  "FeatureCount": 11,
+  "FeatureDescription": "CurrentScore \u002B Ratio \u002B TotalActivity \u002B RecencyScore \u002B CategoryPrior \u002B RatioLift \u002B RatioRank \u002B ScoreRank \u002B GapToMaxRatio \u002B PriorRank \u002B LogTotalActivity \u002B CategoryEncoded (time decay \u0E2D\u0E49\u0E32\u0E07\u0E2D\u0E34\u0E07 splitTime)",
+  "Dataset": {
+    "TotalRows": 7021,
+    "TrainRows": 7021,
+    "TestRows": 7021,
+    "Validation": "5-fold cross-validation \u0E15\u0E32\u0E21\u0E1C\u0E39\u0E49\u0E43\u0E0A\u0E49"
+  },
+  "Metrics": {
+    "NDCG": 0.8991,
+    "DCG": 0,
+    "BeatsBestBaselineAbsolute": true,
+    "BeatsBestBaselineLift": false,
+    "Note": "NDCG = NDCG@3 \u0E1A\u0E19\u0E1B\u0E49\u0E32\u0E22\u0E01\u0E34\u0E08\u0E01\u0E23\u0E23\u0E21\u0E2D\u0E19\u0E32\u0E04\u0E15 (7 \u0E2B\u0E21\u0E27\u0E14 \u0E04\u0E48\u0E32\u0E40\u0E09\u0E25\u0E35\u0E48\u0E22\u0E15\u0E31\u0E27\u0E40\u0E14\u0E35\u0E22\u0E27\u0E2A\u0E39\u0E07\u0E40\u0E01\u0E34\u0E19\u0E08\u0E23\u0E34\u0E07) \u0E14\u0E39 Baselines (\u0E1B\u0E49\u0E32\u0E22\u0E40\u0E14\u0E34\u0E21) \u0E41\u0E25\u0E30 BaselinesLift (\u0E40\u0E01\u0E34\u0E19\u0E01\u0E27\u0E48\u0E32\u0E04\u0E27\u0E32\u0E21\u0E19\u0E34\u0E22\u0E21\u0E2B\u0E21\u0E27\u0E14) \u0E40\u0E17\u0E35\u0E22\u0E1A\u0E01\u0E31\u0E1A baseline (\u0022\u0E0A\u0E19\u0E30\u0022 \u0E2B\u0E21\u0E32\u0E22\u0E16\u0E36\u0E07\u0E2A\u0E39\u0E07\u0E01\u0E27\u0E48\u0E32\u0E17\u0E38\u0E01 baseline \u0E17\u0E31\u0E49\u0E07 NDCG@1 \u0E41\u0E25\u0E30 @3)"
+  },
+  "Baselines": {
+    "Random": {
+      "NdcgAt1": 0.4597,
+      "NdcgAt3": 0.5405,
+      "NdcgAt7": 0.777
+    },
+    "PastCategoryScore": {
+      "NdcgAt1": 0.8476,
+      "NdcgAt3": 0.8736,
+      "NdcgAt7": 0.9397
+    },
+    "CategoryPopularity": {
+      "NdcgAt1": 0.8571,
+      "NdcgAt3": 0.8859,
+      "NdcgAt7": 0.9421
+    },
+    "PastRatioLift": {
+      "NdcgAt1": 0.5224,
+      "NdcgAt3": 0.6627,
+      "NdcgAt7": 0.8321
+    },
+    "LightGBM": {
+      "NdcgAt1": 0.8761,
+      "NdcgAt3": 0.8991,
+      "NdcgAt7": 0.9511
+    }
+  },
+  "BaselinesLift": {
+    "Random": {
+      "NdcgAt1": 0.4724,
+      "NdcgAt3": 0.568,
+      "NdcgAt7": 0.7919
+    },
+    "PastCategoryScore": {
+      "NdcgAt1": 0.6664,
+      "NdcgAt3": 0.7108,
+      "NdcgAt7": 0.8616
+    },
+    "CategoryPopularity": {
+      "NdcgAt1": 0.5812,
+      "NdcgAt3": 0.6422,
+      "NdcgAt7": 0.8287
+    },
+    "PastRatioLift": {
+      "NdcgAt1": 0.6932,
+      "NdcgAt3": 0.7465,
+      "NdcgAt7": 0.8803
+    },
+    "LightGBM": {
+      "NdcgAt1": 0.6316,
+      "NdcgAt3": 0.6722,
+      "NdcgAt7": 0.8462
+    }
+  },
+  "Training": {
+    "TrainedAtUtc": "2026-11-20T04:04:57.5644244Z",
+    "DurationSeconds": 4.63,
+    "MlNetVersion": "1.0.0.0"
+  },
+  "DataSnapshot": {
+    "UniqueUsers": 1003,
+    "UniqueCategories": 7,
+    "UsersWithActivity": 1006,
+    "UsersSkippedTooFewLogs": 3,
+    "UsersSkippedNoPast": 0,
+    "MinLogsPerUser": 2
+  }
+}
